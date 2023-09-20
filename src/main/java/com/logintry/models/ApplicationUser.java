@@ -28,12 +28,12 @@ public class ApplicationUser implements UserDetails {
             joinColumns = {@JoinColumn(name="user_id")},
             inverseJoinColumns = {@JoinColumn(name="role_id")}
     )
+    @JsonIgnore
     private Set<Role> authorities;
 
 
 
-    public ApplicationUser(Integer id, String username, String password, Set<Role> authorities) {
-        this.id = id;
+    public ApplicationUser(String username, String password, Set<Role> authorities) {
         this.username = username;
         this.password = password;
         this.authorities = authorities;
@@ -73,21 +73,25 @@ public class ApplicationUser implements UserDetails {
 
     // TODO logic later
     @Override
+    @JsonIgnore
     public boolean isAccountNonExpired() {
         return true;
     }
 
     @Override
+    @JsonIgnore
     public boolean isAccountNonLocked() {
         return true;
     }
 
     @Override
+    @JsonIgnore
     public boolean isCredentialsNonExpired() {
         return true;
     }
 
     @Override
+    @JsonIgnore
     public boolean isEnabled() {
         return true;
     }

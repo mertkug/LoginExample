@@ -1,6 +1,7 @@
 package com.logintry.controller;
 
 import com.logintry.models.ApplicationUser;
+import com.logintry.models.LoginResponseDTO;
 import com.logintry.models.RegistrationDTO;
 import com.logintry.services.AuthenticationService;
 import org.springframework.web.bind.annotation.*;
@@ -19,7 +20,11 @@ public class AuthenticationController {
 
     @PostMapping("/register")
     public ApplicationUser registerUser(@RequestBody RegistrationDTO body) {
-        System.out.print("hi");
         return auth.registerUser(body.getUsername(), body.getPassword());
+    }
+
+    @PostMapping("/login")
+    public LoginResponseDTO loginUser(@RequestBody RegistrationDTO body){
+        return auth.loginUser(body.getUsername(), body.getPassword());
     }
 }
