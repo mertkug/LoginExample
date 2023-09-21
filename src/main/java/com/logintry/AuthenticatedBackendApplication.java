@@ -1,6 +1,7 @@
 package com.logintry;
 
 import com.logintry.models.ApplicationUser;
+import com.logintry.models.Post;
 import com.logintry.models.Role;
 import com.logintry.repository.RoleRepository;
 import com.logintry.repository.UserRepository;
@@ -30,7 +31,9 @@ public class AuthenticatedBackendApplication {
             Set<Role> roles = new HashSet<>();
             roles.add(adminRole);
 
-            ApplicationUser admin = new ApplicationUser("admin", passwordEncode.encode("password"), roles);
+            Set<Post> posts = new HashSet<>();
+
+            ApplicationUser admin = new ApplicationUser("admin", passwordEncode.encode("password"), roles, posts);
 
             userRepository.save(admin);
         };

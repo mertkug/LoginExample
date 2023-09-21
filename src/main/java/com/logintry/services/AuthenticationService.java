@@ -2,6 +2,7 @@ package com.logintry.services;
 
 import com.logintry.models.ApplicationUser;
 import com.logintry.dto.LoginResponseDTO;
+import com.logintry.models.Post;
 import com.logintry.models.Role;
 import com.logintry.repository.RoleRepository;
 import com.logintry.repository.UserRepository;
@@ -39,8 +40,9 @@ public class AuthenticationService {
 
         Set<Role> authorities = new HashSet<>();
         authorities.add(userRole);
+        Set<Post> posts = new HashSet<>();
 
-        return userRepository.save(new ApplicationUser(username, encodedPassword, authorities));
+        return userRepository.save(new ApplicationUser(username, encodedPassword, authorities, posts));
     }
 
     public LoginResponseDTO loginUser(String username, String password) {

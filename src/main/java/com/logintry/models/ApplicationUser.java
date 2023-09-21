@@ -42,17 +42,20 @@ public class ApplicationUser implements UserDetails {
 
 
 
-    public ApplicationUser(String username, String password, Set<Role> authorities) {
+    public ApplicationUser(String username, String password, Set<Role> authorities, Set<Post> posts) {
         this.username = username;
         this.password = password;
         this.authorities = authorities;
+        this.posts = posts;
     }
 
     public ApplicationUser() {
 
     }
 
-
+    public void addPost(Post post) {
+        posts.add(post);
+    }
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return this.authorities;
