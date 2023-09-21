@@ -19,7 +19,7 @@ public class PostController {
 
     @PostMapping("/create-post")
     public void createPost(@RequestBody PostCreateDTO postReq, @CurrentUser ApplicationUser user){
-        Post post = new Post(user, postReq.getText());
+        Post post = new Post(user, postReq.getText(), 0);
         user.addPost(post);
         postService.createPost(post);
     }

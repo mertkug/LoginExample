@@ -16,14 +16,16 @@ public class Post {
     @JoinColumn(name = "user_id")
     private ApplicationUser owner;
     private String text;
+    private Integer likes;
 
     public Post(String text) {
         this.text = text;
     }
 
-    public Post(ApplicationUser owner, String text) {
+    public Post(ApplicationUser owner, String text, Integer likes) {
         this.owner = owner;
         this.text = text;
+        this.likes = likes;
     }
 
     public Post() {
