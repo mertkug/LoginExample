@@ -15,10 +15,10 @@ import java.util.HashSet;
 import java.util.Set;
 
 @SpringBootApplication
-public class AuthenticatedBackendApplication {
+public class Main {
 
     public static void main(String[] args) {
-        SpringApplication.run(AuthenticatedBackendApplication.class, args);
+        SpringApplication.run(Main.class, args);
     }
 
     @Bean
