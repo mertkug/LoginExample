@@ -1,7 +1,7 @@
 package com.logintry.services;
 
 import com.logintry.models.ApplicationUser;
-import com.logintry.models.LoginResponseDTO;
+import com.logintry.dto.LoginResponseDTO;
 import com.logintry.models.Role;
 import com.logintry.repository.RoleRepository;
 import com.logintry.repository.UserRepository;
@@ -12,9 +12,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.naming.AuthenticationException;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 

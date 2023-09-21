@@ -31,6 +31,15 @@ public class ApplicationUser implements UserDetails {
     @JsonIgnore
     private Set<Role> authorities;
 
+    @OneToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "user_post_junction",
+            joinColumns = {@JoinColumn(name="user_id")},
+            inverseJoinColumns = {@JoinColumn(name="post_id")}
+    )
+    @JsonIgnore
+    private Set<Post> posts;
+
 
 
     public ApplicationUser(String username, String password, Set<Role> authorities) {

@@ -1,4 +1,4 @@
-package com.logintry.models;
+package com.logintry.dto;
 
 public class RegistrationDTO {
     private String username;

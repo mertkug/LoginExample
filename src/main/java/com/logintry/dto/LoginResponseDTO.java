@@ -1,4 +1,7 @@
-package com.logintry.models;
+package com.logintry.dto;
+
+import com.logintry.models.ApplicationUser;
+import org.springframework.beans.factory.annotation.Value;
 
 public class LoginResponseDTO {
     private ApplicationUser user;

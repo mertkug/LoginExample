@@ -1,8 +1,8 @@
 package com.logintry.controller;
 
 import com.logintry.models.ApplicationUser;
-import com.logintry.models.LoginResponseDTO;
-import com.logintry.models.RegistrationDTO;
+import com.logintry.dto.LoginResponseDTO;
+import com.logintry.dto.RegistrationDTO;
 import com.logintry.services.AuthenticationService;
 import org.springframework.web.bind.annotation.*;
 
