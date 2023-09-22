@@ -26,4 +26,9 @@ public class PostService {
     public Set<Post> getPostsByOwner(Integer id) {
         return postRepository.findPostsByOwnerId(id);
     }
+
+    public void likePost(Post post) {
+        post.increaseLike();
+        postRepository.save(post);
+    }
 }

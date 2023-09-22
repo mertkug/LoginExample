@@ -28,4 +28,9 @@ public class PostController {
     public Post getPostById(@PathVariable("id") Post post) {
         return postService.getPost(post);
     }
+
+    @PostMapping("/like-post/{id}")
+    public void likePostById(@PathVariable("id") Post post) {
+        postService.likePost(post);
+    }
 }

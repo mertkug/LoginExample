@@ -32,6 +32,10 @@ public class Post {
 
     }
 
+    public void increaseLike() {
+        likes = likes + 1;
+    }
+
     public String getText() {
         return text;
     }
